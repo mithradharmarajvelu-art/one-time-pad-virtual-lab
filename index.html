@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Time Pad Virtual Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🔐Virtual Cryptography Lab</h1>
+    <p>One-Time Pad Cipher - Encryption and Decryption</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#experiment">Experiment</a>
+    <a href="#theory">Theory</a>
+</nav>
+
+<main>
+    <section id="home" class="card">
+        <h2>Welcome to the One-Time Pad Experiment</h2>
+        <p>
+            Explore how secret keys and XOR operations are used
+            to encrypt and decrypt messages securely.
+        </p>
+    </section>
+
+    <section id="experiment" class="card">
+        <h2>Encryption and Decryption</h2>
+
+        <label>Enter Plaintext:</label>
+        <textarea id="plaintext"
+            placeholder="Enter your secret message..."></textarea>
+
+        <button onclick="generateKey()">Generate Random Key</button>
+
+        <label>Generated Secret Key (Hexadecimal):</label>
+        <textarea id="secretKey" readonly></textarea>
+
+        <button onclick="encryptMessage()">Encrypt Message</button>
+
+        <label>Encrypted Ciphertext (Hexadecimal):</label>
+        <textarea id="ciphertext" readonly></textarea>
+
+        <button onclick="decryptMessage()">Decrypt Message</button>
+
+        <label>Decrypted Message:</label>
+        <textarea id="decrypted" readonly></textarea>
+
+        <button class="reset" onclick="resetLab()">Reset Experiment</button>
+    </section>
+
+    <section id="visualization" class="card">
+        <h2>Binary XOR Visualization</h2>
+        <div id="xorResult">
+            Perform encryption to view the XOR operation.
+        </div>
+    </section>
+
+    <section id="theory" class="card">
+        <h2>Working Principle</h2>
+        <p>Encryption: C = P XOR K</p>
+        <p>Decryption: P = C XOR K</p>
+        <p>
+            The same random secret key is used for encryption
+            and decryption. The key must never be reused.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>Virtual Cryptography Lab | One-Time Pad Cipher</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
